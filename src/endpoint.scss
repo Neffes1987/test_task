@@ -1,0 +1,24 @@
+.inner{
+    margin-top: 10px
+}
+.row{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.def_btn{
+    @extend .btn;
+    @extend .btn-default;
+    height: 34px;
+}
+.FullAlert {
+    float: left!important;
+    width: 100%!important;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.alert{
+    &.alert-success{padding: 3px!important;}
+    &.default-alert{
+        padding:5px;
+    }
+}
