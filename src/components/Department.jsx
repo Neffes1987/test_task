@@ -32,6 +32,7 @@ export class Department extends React.Component {
     componentWillMount() {
         this.fetch_departments()
     }
+
     render() {
         const {
             department:departments_stack = [],
@@ -40,20 +41,23 @@ export class Department extends React.Component {
         return (
             <Panel title='Отдел'>
                 <div className='clearfix'>
+                    <input type='text' defaultValue=''/>
                     {
-                        departments_stack.map((item,idx)=>(
-                            <div  key = {idx} className='row'>
-                                <div className='col-md-12'>
-                                    <InputGroup
-                                        label = {<span className='glyphicon glyphicon-pencil'></span>}
-                                        iValue = {item.name}
-                                        func = {this.change_custom_data.bind(this,idx)}
-                                        btn_label = 'Сохранить'
-                                        btn_func = {this.save_departments.bind(this,departments_stack,idx)}
-                                        />
+                        departments_stack.map((item,idx)=>{
+                            return (
+                                <div  key = {idx} className='row'>
+                                    <div className='col-md-12'>
+                                        <InputGroup
+                                            label = {<span className='glyphicon glyphicon-pencil'></span>}
+                                            iValue = {item.name}
+                                            func = {this.change_custom_data.bind(this,idx)}
+                                            btn_label = 'Сохранить'
+                                            btn_func = {this.save_departments.bind(this,departments_stack,idx)}
+                                            />
+                                    </div>
                                 </div>
-                            </div>
-                        ))
+                            )
+                        })
                     }
                     <div className='row'>
                         <div className='col-md-12'>

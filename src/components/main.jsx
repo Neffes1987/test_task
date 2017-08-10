@@ -11,7 +11,9 @@ export default class Main extends React.Component {
     render() {
         return (
             <div className='container'>
-                <div className='row'>
+                <div
+                    className={'row' + ' 444'}
+                    >
                     <Alert/>
                     <ReactSpinner/>
                     <div className='col-md-3'><Menu {...this.props}/></div>
